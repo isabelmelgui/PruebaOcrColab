@@ -1,1 +1,1 @@
-# PruebaOcrColab
+# Reconocimiento Óptico de Caracteres

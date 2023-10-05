@@ -7,7 +7,7 @@ from PIL import Image
 
 st.title("Reconocimiento óptico de Caracteres")
 
-img_file_buffer = st.camera_input("Toma una Foto")
+img_file_buffer = st.file_uploader("Choose a jpg file")
 
 with st.sidebar:
       filtro = st.radio("Aplicar Filtro",('Con Filtro', 'Sin Filtro'))
@@ -27,7 +27,6 @@ if img_file_buffer is not None:
     img_rgb = cv2.cvtColor(cv2_img, cv2.COLOR_BGR2RGB)
     text=pytesseract.image_to_string(img_rgb)
     st.write(text) 
-    
 
 
     

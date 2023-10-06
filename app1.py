@@ -24,7 +24,7 @@ if img_file_buffer2 is not None:
          cv2_img = cv_img
     
         
-    img_rgb2 = cv2.cvtColor(cv2_img2, cv2.COLOR_BGR2RGB)
+    img_rgb2 = cv2.cvtColor(cv2_img, cv2.COLOR_BGR2RGB)
     text=pytesseract.image_to_string(img_rgb2)
     st.write(text) 
 

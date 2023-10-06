@@ -16,12 +16,12 @@ with st.sidebar:
 if img_file_buffer2 is not None:
     # To read image file buffer with OpenCV:
     bytes_data2 = img_file_buffer2.getvalue()
-    cv2_img2 = cv2.imdecode(np.frombuffer(bytes_data, np.uint8), cv2.IMREAD_COLOR)
+    cv2_img = cv2.imdecode(np.frombuffer(bytes_data, np.uint8), cv2.IMREAD_COLOR)
     
     if filtro2 == 'Con Filtro':
-         cv2_img2=cv2.bitwise_not(cv2_img)
+         cv2_img=cv2.bitwise_not(cv2_img)
     else:
-         cv2_img2 = cv2_img2
+         cv2_img = cv_img2
     
         
     img_rgb2 = cv2.cvtColor(cv2_img2, cv2.COLOR_BGR2RGB)

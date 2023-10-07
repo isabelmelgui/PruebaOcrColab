@@ -45,7 +45,7 @@ def text_to_speech(text2, tld):
         my_file_name2 = text2[0:20]
     except:
         my_file_name2 = "audio"
-    tts.save(f"temp/{my_file_name2}.mp3")
+    tts2.save(f"temp/{my_file_name2}.mp3")
     return my_file_name2, text2
 
 #display_output_text = st.checkbox("Verifica el texto")

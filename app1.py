@@ -51,24 +51,24 @@ def text_to_speech(text2, tld):
 #display_output_text = st.checkbox("Verifica el texto")
 
 if st.button("Escuchar características"):
-    result, output_text2 = text_to_speech(text2, tld)
-    audio_file2 = open(f"temp/{result}.mp3", "rb")
-    audio_bytes2 = audio_file.read()
+    result2, output_text2 = text_to_speech(text2, tld)
+    audio_file2 = open(f"temp/{result2}.mp3", "rb")
+    audio_bytes2 = audio_file2.read()
     st.markdown(f"## Tú audio:")
-    st.audio(audio_byte2s, format="audio/mp3", start_time=0)
+    st.audio(audio_bytes2, format="audio/mp3", start_time=0)
 
     #if display_output_text:
     st.markdown(f"## Texto en audio:")
-    st.write(f" {output_text}")
+    st.write(f" {output_text2}")
 
 
 def remove_files(n):
-    mp3_files = glob.glob("temp/*mp3")
-    if len(mp3_files) != 0:
-        now = time.time()
-        n_days = n * 86400
+    mp3_files2 = glob.glob("temp/*mp3")
+    if len(mp3_files2) != 0:
+        now2 = time.time()
+        n_days2 = n * 86400
         for f in mp3_files:
-            if os.stat(f).st_mtime < now - n_days:
+            if os.stat(f).st_mtime < now2 - n_days2:
                 os.remove(f)
                 print("Deleted ", f)
 

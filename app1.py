@@ -4,6 +4,8 @@ import numpy as np
 import pytesseract
 from PIL import Image
 import glob
+import os
+import time
 
 st.title("Reconocimiento óptico de Caracteres")
 

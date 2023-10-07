@@ -3,7 +3,7 @@ import cv2
 import numpy as np
 import pytesseract
 from PIL import Image
-
+import glob
 
 st.title("Reconocimiento óptico de Caracteres")
 

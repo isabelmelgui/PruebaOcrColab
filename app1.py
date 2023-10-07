@@ -67,7 +67,7 @@ def remove_files(n):
     if len(mp3_files2) != 0:
         now2 = time.time()
         n_days2 = n * 86400
-        for f in mp3_files:
+        for f in mp3_files2:
             if os.stat(f).st_mtime < now2 - n_days2:
                 os.remove(f)
                 print("Deleted ", f)

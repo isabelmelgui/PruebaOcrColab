@@ -42,26 +42,26 @@ tld="es"
 
 def text_to_speech(text2, tld):
     
-    tts2 = gTTS(text2,"es", tld, slow=False)
+    tts = gTTS(text2,"es", tld, slow=False)
     try:
         my_file_name2 = text2[0:20]
     except:
         my_file_name2 = "audio"
-    tts2.save(f"temp/{my_file_name2}.mp3")
+    tts.save(f"temp/{my_file_name2}.mp3")
     return my_file_name2, text2
 
 #display_output_text = st.checkbox("Verifica el texto")
 
 if st.button("Escuchar características"):
-    result2, output_text2 = text_to_speech(text2, tld)
-    audio_file2 = open(f"temp/{result2}.mp3", "rb")
+    result, output_text = text_to_speech(text2, tld)
+    audio_file2 = open(f"temp/{result}.mp3", "rb")
     audio_bytes2 = audio_file2.read()
     st.markdown(f"## Tú audio:")
     st.audio(audio_bytes2, format="audio/mp3", start_time=0)
 
     #if display_output_text:
     st.markdown(f"## Texto en audio:")
-    st.write(f" {output_text2}")
+    st.write(f" {output_text}")
 
 
 def remove_files(n):

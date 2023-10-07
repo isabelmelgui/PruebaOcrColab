@@ -25,10 +25,28 @@ if img_file_buffer2 is not None:
     
         
     img_rgb2 = cv2.cvtColor(cv2_img, cv2.COLOR_BGR2RGB)
-    text=pytesseract.image_to_string(img_rgb2)
-    st.write(text) 
+    text2 =pytesseract.image_to_string(img_rgb2)
+    st.write(text2) 
+
+try:
+    os.mkdir("temp")
+except:
+    pass
+
+st.subheader("Escucha las características de la prenda")
 
 
+tld="es"
+
+def text_to_speech(text2, tld):
+    
+    tts2 = gTTS(text2,"es", tld, slow=False)
+    try:
+        my_file_name2 = text2[0:20]
+    except:
+        my_file_name2 = "audio"
+    tts.save(f"temp/{my_file_name2}.mp3")
+    return my_file_name2, text2
     
 
 

@@ -47,6 +47,32 @@ def text_to_speech(text2, tld):
         my_file_name2 = "audio"
     tts.save(f"temp/{my_file_name2}.mp3")
     return my_file_name2, text2
-    
+
+#display_output_text = st.checkbox("Verifica el texto")
+
+if st.button("Escuchar características"):
+    result, output_text2 = text_to_speech(text2, tld)
+    audio_file2 = open(f"temp/{result}.mp3", "rb")
+    audio_bytes2 = audio_file.read()
+    st.markdown(f"## Tú audio:")
+    st.audio(audio_byte2s, format="audio/mp3", start_time=0)
+
+    #if display_output_text:
+    st.markdown(f"## Texto en audio:")
+    st.write(f" {output_text}")
+
+
+def remove_files(n):
+    mp3_files = glob.glob("temp/*mp3")
+    if len(mp3_files) != 0:
+        now = time.time()
+        n_days = n * 86400
+        for f in mp3_files:
+            if os.stat(f).st_mtime < now - n_days:
+                os.remove(f)
+                print("Deleted ", f)
+
+
+remove_files(7)
 
 
